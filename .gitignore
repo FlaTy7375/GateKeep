@@ -1,0 +1,13 @@
+# Скрываем node_modules на случай, если они есть в корне
+node_modules/
+.env
+
+# Логи и сборки
+dist/
+dist-ssr/
+*.log
+
+# Системные файлы
+.DS_Store
+.idea/
+.vscode/
