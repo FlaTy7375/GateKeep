@@ -6,10 +6,15 @@ const nodemailer = require('nodemailer');
 
 // Настройка транспортера для отправки писем
 const transporter = nodemailer.createTransport({
-    service: 'gmail', 
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false, // true for 465, false for 587
     auth: {
         user: process.env.EMAIL_USER || 'example@gmail.com',
         pass: process.env.EMAIL_PASS || 'password123'
+    },
+    tls: {
+        rejectUnauthorized: false // Помогает обойти проблемы с сертификатами и фаерволами
     }
 });
 
